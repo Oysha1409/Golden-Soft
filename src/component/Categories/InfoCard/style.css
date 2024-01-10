@@ -1,0 +1,9 @@
+.info-card {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.02) 0%,
+      rgba(0, 0, 0, 0.02) 100%
+    ),
+    url(<path-to-image>),
+    lightgray 168.771px -53.513px / 83.094% 106.078% no-repeat;
+}
