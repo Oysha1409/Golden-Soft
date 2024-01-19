@@ -13,6 +13,10 @@ function App() {
       element: <Category />,
     },
     {
+      path: '/category',
+      element: <Category />,
+    },
+    {
       path: '/product',
       element: <Product />,
     },

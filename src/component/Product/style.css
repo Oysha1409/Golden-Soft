@@ -1,0 +1,9 @@
+.mySwiper2 {
+  overflow-y: unset;
+}
+
+.mySwiper2 .swiper-button-next,
+.mySwiper2 .swiper-button-prev {
+  top: 0;
+  z-index: 2000 !important;
+}

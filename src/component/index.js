@@ -6,3 +6,5 @@ export {default as Like } from "./Like";
 export {default as Statistics} from "./Statistics";
 export {default as WhyUs} from "./WhyUs";
 export {default as Categories} from "./Categories"
+export {default as Product} from "./Product"
+export {default as Contact} from "./Contact"

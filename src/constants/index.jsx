@@ -6,6 +6,7 @@ import image_2 from '@/assets/image/category-img-2.png';
 import image_3 from '@/assets/image/category-img-3.png';
 import image_4 from '@/assets/image/category-img-4.png';
 
+
 export const swiperData = [
   {
     id: 0,
@@ -103,3 +104,5 @@ export const categoriesData = [
     link: '/category/for-home',
   },
 ];
+
+
