@@ -9,17 +9,18 @@ function App() {
       element: <Home />,
     },
     {
-      path: '/category/:type',
-      element: <Category />,
+      path: "/product",
+      element: <Product/>
+    },
+    {
+      path: '/product/:type',
+      element: <Product />,
     },
     {
       path: '/category',
       element: <Category />,
     },
-    {
-      path: '/product',
-      element: <Product />,
-    },
+
     {
       path: '/order',
       element: <Order />,

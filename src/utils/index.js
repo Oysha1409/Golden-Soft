@@ -13,3 +13,8 @@ export function validateEmail(email) {
 export function nameValidation(name) {
     return name.trim("") && name.length >= 3
 }
+
+
+export function createFakeArr(length) {
+  return Array.from({length: length})
+} 

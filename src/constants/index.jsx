@@ -7,6 +7,67 @@ import image_3 from '@/assets/image/category-img-3.png';
 import image_4 from '@/assets/image/category-img-4.png';
 
 
+import category_img_one from "../assets/image/category-img_1.png"
+import category_img_two from "../assets/image/category-img_2.png"
+import category_img_three from "../assets/image/category-img_8.png"
+import category_img_four from "../assets/image/category-img_4.png"
+import category_img_five from "../assets/image/category-img_5.png"
+import category_img_six from "../assets/image/category-img_6.png"
+import category_img_seven from "../assets/image/category-img_7.png"
+import category_img_eight from "../assets/image/category-img_8.png"
+
+
+export const categoryData = [
+  {
+    id: 0,
+    image: category_img_one,
+    title: "Накладные электронные замки",
+    category: "forOffice",
+  },
+  {
+    id: 1,
+    image: category_img_two,
+    title: "Врезные электроные замки",
+    category: "forHome",
+  },
+  {
+    id: 2,
+    image: category_img_three,
+    title: "Замки для квартиры",
+    category: "forFlat",
+  },
+  {
+    id: 3,
+    image: category_img_four,
+    title: "Замки для дома",
+    category: "forHouse",
+  },
+  {
+    id: 4,
+    image: category_img_five,
+    title: "Замки для отелей",
+    category: "forOffice",
+  },
+  {
+    id: 5,
+    image: category_img_six,
+    title: "Замки для офиса",
+    category: "forHome",
+  },
+  {
+    id: 6,
+    image: category_img_seven,
+    title: "Замки для шкафчиков",
+    category: "forFlat",
+  },
+  {
+    id: 7,
+    image: category_img_eight,
+    title: "Замки для раздевалок",
+    category: "forHouse",
+  },
+]
+
 export const swiperData = [
   {
     id: 0,
@@ -83,25 +144,25 @@ export const categoriesData = [
     id: 0,
     image: image_1,
     title: 'Для отелей',
-    link: '/category/for-hotel',
+    link: '/product/forHome',
   },
   {
     id: 1,
     image: image_2,
     title: 'Для шкафчиков',
-    link: '/category/for-shelf',
+    link: '/product/forOffice',
   },
   {
     id: 2,
     image: image_3,
     title: 'Для офисов',
-    link: '/category/for-office',
+    link: '/product/forFlat',
   },
   {
     id: 3,
     image: image_4,
     title: 'Замки для дома',
-    link: '/category/for-home',
+    link: '/product/forHouse',
   },
 ];
 

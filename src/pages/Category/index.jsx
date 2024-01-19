@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header } from '@/component'
+import { Header, CategoryList } from '@/component'
 import { useParams } from 'react-router-dom'
 
 
@@ -10,8 +10,7 @@ const Category = () => {
   return (
     <>
         <Header/>
-        <h2>Category</h2>
-        <p>{type}</p>
+        <CategoryList />
     </>
   )
 }

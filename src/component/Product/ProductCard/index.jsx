@@ -5,7 +5,7 @@ import { convertPrice } from "@/utils";
 const ProductCard = ({ onSale, image, title, price }) => {
   return (
     <div className="w-[288px]">
-      <div className="bg-gray-100 relative w-full h-[320px]">
+      <div className="bg-gray-100 relative w-full">
         <img src={image} alt={title} className="mt-4"  />
 
         <button className="absolute top-3 right-3 bg-white text-xs px-[10px] py-2 font-medium uppercase shadow-[0px_2px_5px_0px_rgba(0,0,0,0.03)]">
