@@ -141,7 +141,7 @@ export function MegaMenuDefault() {
           variant="text"
           color="blue-gray"
           className="lg:hidden"
-          onClick={() => setOpenNav(!openNav)}></IconButton>
+          onClick={() => setOpenNav(!openNav)}>""</IconButton>
       </div>
       <Collapse open={openNav}>
         <NavList />

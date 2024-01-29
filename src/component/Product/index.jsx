@@ -13,10 +13,14 @@ import "./style.css";
 
 import { Navigation } from "swiper/modules";
 import { Icons } from "@/assets/icons";
+import { useContext } from "react";
+import { MainContext } from "../../context/useMainContext";
 const Product = () => {
-  const fakeArr = Array.from({length: 5})
-  const {data} = useGetData({url: "products"})
+  const fakeArr = Array.from({ length: 5 });
+  const { data } = useGetData({ url: "products" });
+  const { cartItems } = useContext(MainContext);
 
+  console.log(cartItems, "cartItemssssssssss");
   return (
     <section className="mt-[100px]">
       <div className="container">
@@ -42,21 +46,21 @@ const Product = () => {
           modules={[Navigation]}
           className="mySwiper2 mt-16"
         >
-          {data.length ? (
-            data.map((el) => (
-              <SwiperSlide key={el.id}>
-                <Link to="/category">
-                  <ProductCard {...el} />
-                </Link>
-              </SwiperSlide>
-            ))
-          ) : (
-            fakeArr.map((_, i,) => (
-             <SwiperSlide key={i}>
-               <Skeleton width={288} height={420} />
-             </SwiperSlide>
-            ))
-          )}
+          {data.length
+            ? data.map((el) => (
+                <SwiperSlide key={el.id}>
+                  <ProductCard
+                    {...el}
+                    data={el}
+                    cart={cartItems.some((item) => item.id == el.id)}
+                  />
+                </SwiperSlide>
+              ))
+            : fakeArr.map((_, i) => (
+                <SwiperSlide key={i}>
+                  <Skeleton width={288} height={420} />
+                </SwiperSlide>
+              ))}
         </Swiper>
       </div>
     </section>

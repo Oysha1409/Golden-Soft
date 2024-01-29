@@ -14,8 +14,8 @@ const CategoryList = () => {
 
           <div className="mt-16 grid grid-cols-4 gap-x-8 gap-y-12">
             {categoryData.map((el) => (
-              <Link to={`/product/${el.category}`}>
-                <div key={el.id}>
+              <Link to={`/product/${el.category}`} key={el.id}>
+                <div>
                   <img src={el.image} alt={el.title} />
                   <Typography
                     variant="h3"
