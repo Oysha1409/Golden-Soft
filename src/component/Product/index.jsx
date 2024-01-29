@@ -51,8 +51,8 @@ const Product = () => {
               </SwiperSlide>
             ))
           ) : (
-            fakeArr.map(el => (
-             <SwiperSlide>
+            fakeArr.map((_, i,) => (
+             <SwiperSlide key={i}>
                <Skeleton width={288} height={420} />
              </SwiperSlide>
             ))

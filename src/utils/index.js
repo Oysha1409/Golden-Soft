@@ -18,3 +18,8 @@ export function nameValidation(name) {
 export function createFakeArr(length) {
   return Array.from({length: length})
 } 
+
+export function caclDiscount(price, discount) {
+  let summa = price -(price / 100 * discount)
+  return  summa.toLocaleString() + "₽" 
+}

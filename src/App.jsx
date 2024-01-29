@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { Category, Home, Order, Product, Trade } from './pages';
+import { Category, Home, Order, Product, Trade, ProductInfo } from './pages';
 import './App.css';
 
 function App() {
@@ -29,6 +29,10 @@ function App() {
       path: '/trade',
       element: <Trade />,
     },
+    {
+      path: "/product-info/:id",
+      element: <ProductInfo/>
+    }
   ]);
 
   return <RouterProvider router={router} />;
