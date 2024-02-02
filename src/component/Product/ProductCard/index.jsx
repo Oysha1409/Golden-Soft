@@ -4,11 +4,13 @@ import { Typography } from "@material-tailwind/react";
 import { Icons } from "@/assets/icons";
 import { convertPrice, caclDiscount } from "@/utils";
 import { MainContext } from "@/context/useMainContext";
+import clsx from "clsx";
 
-const ProductCard = ({ onSale, image, title, id, price, data, cart }) => {
-  const { addToCart, removeFromCart } = useContext(MainContext);
+const ProductCard = ({ onSale, image, title, id, price, data, cart, like }) => {
+  const { addToCart, removeFromCart, addToLike, removeFromLike } = useContext(MainContext);
   const cartHandle = () => (cart ? removeFromCart(id) : addToCart(data));
-
+  console.log(like);
+  const likeHandle = () => like ? removeFromLike(id) : addToLike(data)
   return (
     <div className="w-[288px]">
       <div className="bg-gray-100 relative w-full">
@@ -17,11 +19,9 @@ const ProductCard = ({ onSale, image, title, id, price, data, cart }) => {
         </Link>
         <button
           onClick={() => cartHandle()}
-          className="absolute top-3 right-3 bg-white text-xs px-[10px] py-2 font-medium uppercase shadow-[0px_2px_5px_0px_rgba(0,0,0,0.03)]"
+          className={clsx(`${cart ? 'bg-primary' : 'bg-white'} absolute top-3 right-3 bg-white text-xs px-[10px] py-2 font-medium uppercase shadow-[0px_2px_5px_0px_rgba(0,0,0,0.03)] rounded-lg`)}
         >
-          {
-            cart ? "Remove from cart" : "Add to cart"
-          }
+          <Icons.cartIcon color={`${cart ? 'white' : '#454F5B'}`}/>
         </button>
 
         <button className="absolute top-3 left-3 flex gap-2 align-middle ">
@@ -34,11 +34,8 @@ const ProductCard = ({ onSale, image, title, id, price, data, cart }) => {
           </span>
         </button>
 
-        <button className="absolute left-3 top-12 bg-white flex gap-[10px] p-2 text-title-color text-xs font-normal">
-          <span className="block">
-            <Icons.giftIcon className="mt-[1px]" />
-          </span>
-          Подарок
+        <button onClick={() => likeHandle()} className="absolute left-3 top-12 bg-white flex gap-[10px] p-2 text-title-color text-xs font-normal">
+          <Icons.likeIcon color={like}/>
         </button>
       </div>
 

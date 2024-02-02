@@ -1,6 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import Skeleton from "react-loading-skeleton";
-import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import useGetData from "@/hooks/useGetData";
 import Title from "@/ui/Title";
@@ -18,8 +17,9 @@ import { MainContext } from "../../context/useMainContext";
 const Product = () => {
   const fakeArr = Array.from({ length: 5 });
   const { data } = useGetData({ url: "products" });
-  const { cartItems } = useContext(MainContext);
+  const { cartItems, likeItems } = useContext(MainContext);
 
+  console.log(likeItems, "likeItems");
   console.log(cartItems, "cartItemssssssssss");
   return (
     <section className="mt-[100px]">
@@ -53,6 +53,7 @@ const Product = () => {
                     {...el}
                     data={el}
                     cart={cartItems.some((item) => item.id == el.id)}
+                    like={likeItems.some((item ) =>item.id == el.id )}
                   />
                 </SwiperSlide>
               ))

@@ -81,11 +81,11 @@ export const Icons = {
       xmlns="http://www.w3.org/2000/svg"
       width={32}
       height={32}
-      fill="none"
+      fill={props.color ? 'red' : 'none'}
       {...props}
     >
       <path
-        stroke="#454F5B"
+        stroke={props.color ? "red" : "#454F5B"}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
@@ -102,7 +102,7 @@ export const Icons = {
       {...props}
     >
       <path
-        stroke="#454F5B"
+        stroke={props.color}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
