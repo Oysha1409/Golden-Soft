@@ -1,8 +1,10 @@
 import {
+  ADD_ONE,
   ADD_TO_CART,
   ADD_TO_LIKE,
   REMOVE_FROM_CART,
   REMOVE_FROM_LIKE,
+  REMOVE_ONE,
 } from "./type";
 
 export function cartReducer(state, action) {
@@ -14,6 +16,7 @@ export function cartReducer(state, action) {
           ...state.cartItems,
           {
             ...action.payload,
+            quantity: 1,
           },
         ],
       };
@@ -24,15 +27,33 @@ export function cartReducer(state, action) {
       };
 
     case ADD_TO_LIKE:
-        return {
-            ...state,
-            likeItems: [...state.likeItems, action.payload],
-        };
+      return {
+        ...state,
+        likeItems: [...state.likeItems, action.payload],
+      };
     case REMOVE_FROM_LIKE:
       return {
         ...state,
         likeItems: state.likeItems.filter((el) => el.id !== action.payload),
       };
+
+    case ADD_ONE:
+      return {
+        ...state,
+        cartItems: state.cartItems.map((item) =>
+          item.id == action.payload
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        ),
+      };
+      case REMOVE_ONE:
+        return {
+          ...state,
+          cartItems: state.cartItems.map(item => item.id == action.payload ? {
+            ...item,
+            quantity: item.quantity - 1
+          }: item) 
+        }
     default:
       console.log("default");
   }

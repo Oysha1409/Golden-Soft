@@ -102,7 +102,7 @@ export const Icons = {
       {...props}
     >
       <path
-        stroke={props.color}
+        stroke={props.color || "#454F5B"}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}

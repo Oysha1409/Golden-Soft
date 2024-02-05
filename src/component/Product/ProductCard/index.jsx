@@ -9,7 +9,6 @@ import clsx from "clsx";
 const ProductCard = ({ onSale, image, title, id, price, data, cart, like }) => {
   const { addToCart, removeFromCart, addToLike, removeFromLike } = useContext(MainContext);
   const cartHandle = () => (cart ? removeFromCart(id) : addToCart(data));
-  console.log(like);
   const likeHandle = () => like ? removeFromLike(id) : addToLike(data)
   return (
     <div className="w-[288px]">
@@ -19,7 +18,7 @@ const ProductCard = ({ onSale, image, title, id, price, data, cart, like }) => {
         </Link>
         <button
           onClick={() => cartHandle()}
-          className={clsx(`${cart ? 'bg-primary' : 'bg-white'} absolute top-3 right-3 bg-white text-xs px-[10px] py-2 font-medium uppercase shadow-[0px_2px_5px_0px_rgba(0,0,0,0.03)] rounded-lg`)}
+          className={clsx(`${cart ? 'bg-blue-600' : 'bg-white'} absolute top-3 right-3 bg-white text-xs px-[10px] py-2 font-medium uppercase shadow-[0px_2px_5px_0px_rgba(0,0,0,0.03)] rounded-lg`)}
         >
           <Icons.cartIcon color={`${cart ? 'white' : '#454F5B'}`}/>
         </button>

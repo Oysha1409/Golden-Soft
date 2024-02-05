@@ -1,6 +1,6 @@
 import { createContext, useEffect, useReducer } from "react";
 import { cartReducer } from "../reducer/Cart/store";
-import { ADD_TO_CART, ADD_TO_LIKE, REMOVE_FROM_CART, REMOVE_FROM_LIKE } from "../reducer/Cart/type";
+import { ADD_ONE, ADD_TO_CART, ADD_TO_LIKE, REMOVE_FROM_CART, REMOVE_FROM_LIKE, REMOVE_ONE } from "../reducer/Cart/type";
 
 
 export const MainContext = createContext(null);
@@ -13,11 +13,12 @@ export function MainContextContainer({ children }) {
 
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
-  const addToCart = (el) => dispatch({ type: ADD_TO_CART, payload: el });
-  const addToLike = (el) => dispatch({type: ADD_TO_LIKE, payload: el})
-  const removeFromCart = (id)=> dispatch({type: REMOVE_FROM_CART, payload: id})
-  const removeFromLike = (id) => dispatch({type: REMOVE_FROM_LIKE, payload: id})
-
+  const addToCart = el => dispatch({ type: ADD_TO_CART, payload: el });
+  const addToLike = el => dispatch({type: ADD_TO_LIKE, payload: el})
+  const removeFromCart = id=> dispatch({type: REMOVE_FROM_CART, payload: id})
+  const removeFromLike = id => dispatch({type: REMOVE_FROM_LIKE, payload: id})
+  const addOne = id => dispatch({type: ADD_ONE, payload: id})
+  const removeOne = id => dispatch({type: REMOVE_ONE, payload: id})
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
   }, [state.cartItems])
@@ -34,7 +35,9 @@ export function MainContextContainer({ children }) {
         addToCart,
         removeFromCart,
         addToLike,
-        removeFromLike
+        removeFromLike,
+        addOne,
+        removeOne
       }}
     >
       {children}

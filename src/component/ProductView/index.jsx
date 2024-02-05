@@ -8,7 +8,6 @@ import ProductAccordion from "../Accordion";
 
 const ProductView = ({ data }) => {
 
-    console.log(caclDiscount(33000, 15));
   return (
     <section className="mt-10">
       <div className="container">

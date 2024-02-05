@@ -18,9 +18,6 @@ const Product = () => {
   const fakeArr = Array.from({ length: 5 });
   const { data } = useGetData({ url: "products" });
   const { cartItems, likeItems } = useContext(MainContext);
-
-  console.log(likeItems, "likeItems");
-  console.log(cartItems, "cartItemssssssssss");
   return (
     <section className="mt-[100px]">
       <div className="container">

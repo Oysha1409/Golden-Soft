@@ -25,10 +25,6 @@ const Contact = () => {
     else {
         setEmailErrormessage("")
         setErrorMessage("")
-        console.log({
-            name: name,
-            email: email
-        });
         setOpen(true)
         setEmail("");
         setName("")
